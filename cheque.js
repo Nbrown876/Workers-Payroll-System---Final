@@ -335,9 +335,9 @@ function printSingleCheque(chequeNo) {
                 </head>
                 <body>
                     <div class="cheque">
-                        <div class="watermark">PAYROLL</div>
+                        <div class="watermark">PAYROLL CHEQUE</div>
                         <div class="header">
-                            <h2>COMPANY NAME</h2>
+                            <h2>WORKERS' PAYROLL SYSTEM</h2>
                             <div>
                                 <p>Cheque No: ${cheque.chequeNo}</p>
                                 <p>Date: ${new Date(cheque.date).toLocaleDateString()}</p>
