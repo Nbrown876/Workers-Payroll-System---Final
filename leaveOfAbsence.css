@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9;
+}
+
+.header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-bar {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.menu-bar span {
+    cursor: pointer;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.tool-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #006400;
+    color: white;
+    padding: 20px;
+    height: calc(100vh - 80px);
+    float: left;
+}
+
+.sidebar-item {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    background-color: #006400;
+}
+
+.btn:hover {
+    background-color: #004d00;
+}

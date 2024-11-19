@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYSLIP - CREATE PAYSLIP</title>
+    <link rel="stylesheet" href="payslip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <script src="accessControl.js"></script>
+    <script>
+        // Check access when the page loads
+        checkAccess(['manager', 'accountant']);
+    </script>
+
+    <nav class="navbar">
+        <div class="logo">PAYSLIP - CREATE PAYSLIP</div>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="payslip-menu">
+                <div class="menu-item active">CREATE PAYSLIP</div>
+                <div class="menu-item">VIEW ALL PAYSLIPS</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="payslip-form">
+                <div class="form-group">
+                    <label>PAYSLIP FOR THE MONTH OF:</label>
+                    <select>
+                        <option value="">Select Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                        <!-- Add all months -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>PAYSLIP FOR THE YEAR OF:</label>
+                    <select>
+                        <option value="">Select Year</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>EMPLOYEE ID:</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>EMPLOYEE NAME:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>DESIGNATION:</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>NAME OF DEPARTMENT:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>BASIC PAY:</label>
+                        <input type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>ALLOWANCE:</label>
+                        <input type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>DEDUCTION:</label>
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>NET PAY AMOUNT:</label>
+                        <input type="number" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>AMOUNT IN WORDS:</label>
+                        <input type="text" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>PREPARED BY:</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>APPROVED BY:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn edit">EDIT</button>
+                    <button class="btn save">SAVE & CLOSE</button>
+                    <button class="btn submit">SUBMIT EMAIL & CLOSE</button>
+                    <button class="btn clear">CLEAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="logout.js"></script>
+    <script src="payslip.js"></script>
+</body>
+</html>

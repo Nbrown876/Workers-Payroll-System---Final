@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Record</title>
+    <link rel="stylesheet" href="Attendance.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Record</h1>
+        <div id="current-time" class="time-display"></div>
+        <div class="attendance-form">
+            <div class="attendance-form">
+                <input type="text" id="employee-id" placeholder="Enter Employee ID">
+                <button onclick="markAttendance('in')" class="mark-btn">Clock In</button>
+                <button onclick="markAttendance('out')" class="clock-out-btn">Clock Out</button>
+                <button onclick="toggleAttendanceHistory()" class="history-btn">Show Attendance History</button>
+            </div>
+            
+            <!-- Update the table headers -->
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Employee Name</th>
+                        <th>Date</th>
+                        <th>Clock In</th>
+                        <th>Clock Out</th>
+                        <th>Hours Worked</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+    <script src="Attendance.js"></script>
+</body>
+</html>

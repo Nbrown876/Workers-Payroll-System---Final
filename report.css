@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.window {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.title-bar {
+    background-color: #2E7D32;
+    color: white;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-bar {
+    background-color: white;
+    padding: 8px 16px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.content-container {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2E7D32;
+    color: white;
+}
+
+.sidebar-header {
+    padding: 10px 20px;
+    background-color: #1B5E20;
+    font-weight: bold;
+}
+
+.sidebar-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    background-color: #1B5E20;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #e8f5e9;
+    padding: 20px;
+}
+
+.toolbar {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tool-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.report-form {
+    background-color: #c8e6c9;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.form-header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 0 0 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.report-details {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #2E7D32;
+    color: white;
+}
+
+.add-row-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.clear { background-color: #c62828; }
+.save { background-color: #2E7D32; }
+.generate { background-color: #1565C0; }
+
+.remove-row-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-row-btn:hover {
+    background: #cc0000;
+}
+
+.employee-select {
+    width: 100%;
+    padding: 5px;
+}
+
+.report-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.department-summary {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.total-summary {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+}
+
+.report-display {
+    padding: 20px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.report-table th,
+.report-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.report-table th {
+    background-color: #f5f5f5;
+}
+
+.previous-reports {
+    padding: 20px;
+}
+
+.report-card {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.department-breakdown {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+}
+
+.total-salary {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.remove-row-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-row-btn:hover {
+    background: #cc0000;
+}
+
+.employee-select {
+    width: 100%;
+    padding: 5px;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.report-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.report-date, .report-generator, .report-timestamp {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.department-breakdown {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.total-salary {
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0;
+}
+
+.view-details-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.view-details-btn:hover {
+    background: #2980b9;
+}
+
+.back-btn {
+    background: #34495e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: #2c3e50;
+}
+
+.report-display {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.report-header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.report-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.back-btn, .print-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+.print-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.print-btn:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAY EMPLOYEE</title>
+    <link rel="stylesheet" href="payEmployee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <script src="accessControl.js"></script>
+
+    <script>
+        checkAccess(['manager', 'accountant']);
+    </script>
+
+    <div class="window">
+        <div class="title-bar">
+            <div class="nav-content">
+                <a href="dashboard.html" class="home-btn">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <h3 class="title">PAY EMPLOYEE</h3>
+            </div>
+
+            <div class="window-controls">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="payment-form">
+                <h3>PAYMENT DETAILS:</h3>
+
+                <div class="form-group">
+                    <label>SELECT EMPLOYEE:</label>
+                    <select id="employee-select" class="full-width">
+                        <option value="">-- Select Employee --</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-group">
+                        <label>BANK BRANCH:</label>
+                        <input type="text" id="bank-branch" class="full-width" readonly>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>ACCOUNT NUMBER:</label>
+                        <input type="text" id="account-number" class="full-width" readonly>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>ACCOUNT HOLDER:</label>
+                        <input type="text" id="account-holder" class="full-width" readonly>
+                    </div>
+
+                <div class="work-section">
+                    <div class="work-header">
+                        <div class="scope">SCOPE OF WORK:</div>
+                        <div class="amount">AMOUNT (JMD):</div>
+                    </div>
+                    <div class="work-input">
+                        <textarea class="scope-input"></textarea>
+                        <input type="number" class="amount-input">
+                    </div>
+                </div>
+
+                <div class="work-section">
+                    <div class="work-header">
+                        <div class="scope">DESCRIPTION OF PAYMENT:</div>
+                        <div class="amount">AMOUNT (JMD):</div>
+                    </div>
+                    <div class="work-input">
+                        <textarea class="scope-input"></textarea>
+                        <input type="number" class="amount-input">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="action-btn clear">CLEAR</button>
+                    <button class="action-btn edit">EDIT</button>
+                    <button class="action-btn save">SAVE</button>
+                    <button class="action-btn submit">SUBMIT PAYMENT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="logout.js"></script>
+    <script src="payEmployee.js"></script>
+</body>
+</html>

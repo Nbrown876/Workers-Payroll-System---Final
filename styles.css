@@ -1,0 +1,147 @@
+/* Existing CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2E7D32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.icon-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.curved-text {                   
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    color: white;
+    font-size: 40px;
+    font-family: 'Papyrus', sans-serif;
+    white-space: nowrap;
+}
+
+.money-icon {
+    top: 100px;
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    background-color: #1d6e23;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dollar-symbol {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-style: normal;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: white;
+    outline: none;
+    font-size: 1em;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.input-group select {
+    appearance: menubar; 
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding-right: 24px; /* Space for custom arrow icon */
+}
+
+/* Custom arrow for dropdown */
+.input-group select:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Button styling */
+.login-button {
+    padding: 12px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    color: #2E7D32;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0a270c;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: thistle;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.form-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.login-form.registering .forgot-password {
+    display: none;
+}
+

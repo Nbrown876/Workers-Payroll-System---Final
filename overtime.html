@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVERTIME RECORDS</title>
+    <link rel="stylesheet" href="overtime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title">OVERTIME RECORDS</div>
+            <div class="window-controls"></div>
+        </div>
+
+        <div class="menu-bar"></div>
+
+        <div class="content-container">
+            <div class="sidebar">
+                <div class="sidebar-header">OVERTIME RECORDS</div>
+                <div class="sidebar-item active" data-view="new-request">• NEW OVERTIME REQUEST</div>
+                <div class="sidebar-item" data-view="view-requests">• VIEW OVERTIME REQUESTS</div>
+            </div>
+
+            <div class="main-content">
+                <!-- New Request Form Section -->
+                <div id="new-request-section">
+                    <div class="overtime-form">
+                        <div class="form-header">
+                            <div class="form-group right">
+                                <label>NO.</label>
+                                <input type="text" id="requestNo" readonly>
+                            </div>
+                            <div class="form-group right">
+                                <label>DATE</label>
+                                <input type="date" id="requestDate">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>SELECT EMPLOYEE</label>
+                            <select id="employeeSelect" onchange="populateEmployeeDetails()">
+                                <option value="">Select an Employee</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>FULL NAME</label>
+                                <input type="text" id="fullName" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>DEPARTMENT</label>
+                                <input type="text" id="department" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>EMAIL</label>
+                                <input type="email" id="email" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>IMMEDIATE SUPERVISOR</label>
+                                <input type="text" id="supervisor">
+                            </div>
+                        </div>
+
+                        <div class="overtime-details">
+                            <h3>OVERTIME DETAILS</h3>
+                            <table id="overtimeTable">
+                                <thead>
+                                    <tr>
+                                        <th>START DATE</th>
+                                        <th>END DATE</th>
+                                        <th>START TIME</th>
+                                        <th>END TIME</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="overtimeBody">
+                                    <tr>
+                                        <td><input type="date" class="date-input"></td>
+                                        <td><input type="date" class="date-input"></td>
+                                        <td><input type="time" class="time-input"></td>
+                                        <td><input type="time" class="time-input"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="add-row-btn" onclick="addNewRow()">+ Add Row</button>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn save" onclick="saveAndClose()">SAVE & CLOSE</button>
+                            <button class="btn submit" onclick="submitRequest()">SUBMIT</button>
+                            <button class="btn clear" onclick="clearForm()">CLEAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View Requests Section -->
+                <div id="view-requests-section" style="display: none;">
+                    <div class="requests-container" id="requestsContainer">
+                        <!-- Requests will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="overtime.js"></script>
+</body>
+</html>

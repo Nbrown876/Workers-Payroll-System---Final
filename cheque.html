@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEQUE - CREATE CHEQUE</title>
+    <link rel="stylesheet" href="cheque.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <script src="accessControl.js"></script>
+
+    <script>
+        checkAccess(['manager', 'accountant']);
+    </script>
+
+    <div class="window">
+        <div class="title-bar">
+            <div class="title">CHEQUE - CREATE CHEQUE</div>
+            <div class="window-controls">
+
+            </div>
+        </div>
+
+        <div class="menu-bar">
+
+        </div>
+
+        <div class="content-container">
+            <div class="sidebar">
+                <div class="sidebar-header">CHEQUE</div>
+                <div class="sidebar-item" id="create-cheque-btn">• CREATE CHEQUE</div>
+                <div class="sidebar-item" id="view-cheques-btn">• VIEW ALL CHEQUES</div>
+            </div>
+
+            <div class="main-content">
+                <div class="toolbar">
+                    <div class="toolbar">
+                        <button onclick="window.location.href='dashboard.html'" class="tool-btn">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button onclick="printCheque()" class="tool-btn" id="print-btn" style="display: none;">
+                            <i class="fas fa-print"></i>
+                        </button>
+                    </div>
+
+                <div class="cheque-form">
+                    <div class="cheque-header">
+                        <div class="form-row">
+                            <div class="form-group payee">
+                                <label>PAY TO THE ORDER OF</label>
+                                <select id="payeeSelect">
+                                    <option value="">Select Payee</option>
+                                </select>
+                            </div>
+                            <div class="form-group-right">
+                                <div class="form-group">
+                                    <label>NO.</label>
+                                    <input type="text" id="chequeNo" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>DATE</label>
+                                    <input type="date" id="chequeDate">
+                                </div>
+                                <div class="form-group">
+                                    <label>$</label>
+                                    <input type="number" id="amount" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>BANK ACCOUNT</label>
+                                <select id="bankAccount">
+                                    <option value="">Select Bank Account</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="account-summary">
+                        <h3>ACCOUNT SUMMARY</h3>
+                        <table id="accountTable">
+                            <thead>
+                                <tr>
+                                    <th>ACCOUNT NUMBER</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>CHEQUE NO.</th>
+                                    <th>COMMENT</th>
+                                    <th>AMOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accountBody">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn save" onclick="saveAndClose()">SAVE & CLOSE</button>
+                        <button class="btn clear" onclick="clearForm()">CLEAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="logout.js"></script>
+    <script src="cheque.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE, UPDATE PAYROLL</title>
+    <link rel="stylesheet" href="payroll.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <script src="accessControl.js"></script>
+
+    <script>
+        checkAccess(['manager', 'accountant']);
+    </script>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="dashboard.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <div class="logo">CREATE/UPDATE PAYROLL</div>
+        </div>
+        <div class="menu">
+        </div>
+    </nav>
+
+    <nav class="navbar">
+        <div class="logo"></div>
+        <div class="menu">
+        </div>
+    </nav>
+
+    <div class="payroll-form">
+        <div class="form-header">
+            <div class="form-group">
+                <label>PAY TO THE ORDER OF</label>
+                <select id="employeeSelect">
+                    <option value="">Select Employee</option>
+                </select>
+            </div>
+
+            <div class="number-group">
+                <label>NO.</label>
+                <input type="text" id="payrollNo" readonly placeholder="Auto-generated">
+            </div>
+
+            <div class="date-group">
+                <label>DATE</label>
+                <input type="date" id="payrollDate">
+            </div>
+            
+            <div class="amount-group">
+                <label>$</label>
+                <input type="number" id="amount" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>BANK ACCOUNT</label>
+            <select id="bankAccount">
+                <option value="">National Commercial Bank (NCB)</option>
+                <option value="">First Global Bank (FGB)</option>
+                <option value="">ScotiaBank</option>
+                <option value="">Jamaica National Bank (JN)</option>
+            </select>
+        </div>
+        
+        <div class="payroll-summary">
+            <h3>PAYROLL SUMMARY</h3>
+            <table id="payrollTable">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="selectAll"></th>
+                        <th>EMPLOYEE NAME</th>
+                        <th>PAY</th>
+                        <th>TOTAL WORKED HOURS</th>
+                        <th>OVERTIME</th>
+                        <th>TOTAL OVERTIME HOURS</th>
+                        <th>GROSS PAY</th>
+                        <th>INCOME TAX</th>
+                    </tr>
+                </thead>
+                <tbody id="payrollBody">
+                </tbody>
+            </table>
+            <button class="action-btn delete" onclick="deleteSelectedPayrolls()">Delete Selected</button>
+        </div>
+
+        <div class="form-inputs">
+            <div class="form-group">
+                <label>TOTAL WORKED HOURS</label>
+                <input type="number" id="totalHours" step="0.1">
+            </div>
+            <div class="form-group">
+                <label>OVERTIME HOURS</label>
+                <input type="number" id="overtimeHours" step="0.1" value="0">
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn create" onclick="createPayroll()">CREATE</button>
+            <button class="action-btn update" onclick="updatePayroll()">UPDATE</button>
+            <button class="action-btn clear" onclick="clearForm()">CLEAR</button>
+        </div>
+    </div>
+
+    <script src="logout.js"></script>
+    <script src="employeeDatabase.js"></script>
+    <script src="employeeManagement.js"></script>
+    <script src="payroll.js"></script>
+</body>
+</html>

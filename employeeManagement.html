@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD, UPDATE, DELETE EMPLOYEE</title>
+    <link rel="stylesheet" href="employeeManagement.css">
+    <link rel="stylesheet" href="searchModal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="nav-content">
+                <a href="dashboard.html" class="home-btn">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <h3 class="title">ADD, UPDATE, DELETE EMPLOYEE</h3>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search employees...">
+                <button onclick="searchEmployees()">Search</button>
+                <button onclick="exportEmployees()">Export to CSV</button>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <!-- Tab system for managers -->
+            <div class="tab-container" id="managerTabs">
+                <button class="tab-btn active" onclick="showTab('employeeForm')">Employee Management</button>
+                <button class="tab-btn" onclick="showTab('pendingEmployees')" id="pendingTab">
+                    Pending Employees
+                    <span class="pending-count" id="pendingCount">0</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Employee Form Section -->
+            <div id="employeeForm" class="tab-content active">
+                <div class="employee-form">
+                    <div class="photo-section">
+                        <div class="photo-container">
+                            <img id="employee-photo" src="placeholder.png" alt="Employee Photo">
+                        </div>
+                        <button class="browse-btn" onclick="document.getElementById('photo-upload').click()">
+                            BROWSE
+                        </button>
+                        <input type="file" id="photo-upload" hidden accept="image/*">
+                    </div>
+
+                    <div class="form-content">
+                        <!-- Your existing form groups -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>EMPLOYEE ID</label>
+                                <input type="text" id="employee-id">
+                            </div>
+                            <div class="form-group">
+                                <label>DEPARTMENT</label>
+                                <input type="text" id="department">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>FIRST NAME</label>
+                                <input type="text" id="first-name">
+                            </div>
+                            <div class="form-group">
+                                <label>POSITION</label>
+                                <input type="text" id="position">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>LAST NAME</label>
+                                <input type="text" id="last-name">
+                            </div>
+                            <div class="form-group">
+                                <label>JOB TITLE</label>
+                                <input type="text" id="job-title">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>MIDDLE NAME</label>
+                                <input type="text" id="middle-name">
+                            </div>
+                            <div class="form-group">
+                                <label>DATE HIRED</label>
+                                <input type="date" id="date-hired">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>GENDER</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="male" name="gender" value="MALE">
+                                    <label for="male">MALE</label>
+                                    <input type="radio" id="female" name="gender" value="FEMALE">
+                                    <label for="female">FEMALE</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>SALARY</label>
+                                <input type="number" id="salary">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>DOB</label>
+                                <input type="date" id="dob">
+                            </div>
+                            <div class="form-group">
+                                <label>BANK NAME & BRANCH</label>
+                                <input type="text" id="bank-details">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>EMAIL</label>
+                                <input type="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label>ACCOUNT NUMBER</label>
+                                <input type="text" id="account-number">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>CONTACT</label>
+                                <input type="tel" id="contact">
+                            </div>
+                            <div class="form-group">
+                                <label>TRN</label>
+                                <input type="text" id="trn">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>ADDRESS</label>
+                                <input type="text" id="address">
+                            </div>
+                            <div class="form-group">
+                                <label>ATTENDANCE MODE</label>
+                                <select id="attendance-mode">
+                                    <option value="ONLINE">ONLINE</option>
+                                    <option value="IN OFFICE">IN OFFICE</option>
+                                    <option value="FLEXIBLE">FLEXIBLE</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="action-btn add" onclick="addEmployee()">ADD</button>
+                            <button class="action-btn update" onclick="updateEmployee()">UPDATE</button>
+                            <button class="action-btn delete" onclick="deleteEmployee()">DELETE</button>
+                            <button class="action-btn clear" onclick="clearForm()">CLEAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending Employees Section -->
+            <div id="pendingEmployees" class="tab-content">
+                <div class="pending-employees-container">
+                    <h2>Pending Employee Approvals</h2>
+                    <div class="pending-filters">
+                        <select id="statusFilter" onchange="filterPendingEmployees()">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                        <input type="date" id="dateFilter" onchange="filterPendingEmployees()">
+                    </div>
+                    <div id="pendingEmployeesList" class="pending-list">
+                        <!-- Pending employees will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSearchModal()">&times;</span>
+            <h2>Search Results</h2>
+            <div id="searchResults">
+                <!-- Search results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeReviewModal()">&times;</span>
+            <h2>Review Employee Details</h2>
+            <div id="reviewContent">
+                <!-- Employee details for review will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+     <script src = "accessControl.js" ></script>
+    <script src="employeeManagement.js"></script>
+</body>
+</html>

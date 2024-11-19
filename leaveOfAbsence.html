@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave of Absence Records</title>
+    <link rel="stylesheet" href="leaveOfAbsence.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h2>LEAVE OF ABSENCE RECORDS</h2>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-item" data-view="new-request">NEW LEAVE REQUEST</div>
+        <div class="sidebar-item" data-view="previous-requests">VIEW PREVIOUS LEAVE REQUESTS</div>
+        <div class="sidebar-item" data-view="current-requests">VIEW CURRENT LEAVE REQUESTS</div>
+        <div class="sidebar-item manager-only" data-view="grant-leave">GRANT PAID/UNPAID LEAVE REQUEST</div>
+        <div class="sidebar-item" onclick="window.location.href='dashboard.html'">MAIN MENU</div>
+    </div>
+
+    <div class="main-content">
+        <!-- New Request Form -->
+        <div id="new-request-section" class="form-container">
+            <div class="left-section">
+                <div class="profile-image" id="employeeImage"></div>
+                <div class="form-group">
+                    <label>EMPLOYEE ID:</label>
+                    <select id="employeeSelect" onchange="populateEmployeeDetails()">
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>FIRST NAME:</label>
+                    <input type="text" id="firstName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>LAST NAME:</label>
+                    <input type="text" id="lastName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>MIDDLE NAME:</label>
+                    <input type="text" id="middleName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>DEPARTMENT:</label>
+                    <input type="text" id="department" readonly>
+                </div>
+                <div class="form-group">
+                    <label>START DATE OF REQUESTED LEAVE:</label>
+                    <input type="date" id="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label>END DATE OF REQUESTED LEAVE:</label>
+                    <input type="date" id="endDate" required>
+                </div>
+                <div class="form-group">
+                    <label>REASON FOR LEAVE:</label>
+                    <textarea id="leaveReason" required></textarea>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <div class="form-group">
+                    <label>GENDER:</label>
+                    <input type="text" id="gender" readonly>
+                </div>
+                <div class="form-group">
+                    <label>DOB:</label>
+                    <input type="date" id="dob" readonly>
+                </div>
+                <div class="form-group">
+                    <label>CONTACT:</label>
+                    <input type="text" id="contact" readonly>
+                </div>
+                <div class="form-group">
+                    <label>ADDRESS:</label>
+                    <input type="text" id="address" readonly>
+                </div>
+                <div class="form-group">
+                    <label>POSITION:</label>
+                    <input type="text" id="position" readonly>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL:</label>
+                    <input type="email" id="email" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Current Requests Section -->
+        <div id="current-requests-section" class="requests-container" style="display: none;">
+            <h3>Current Leave Requests</h3>
+            <div id="currentRequestsList"></div>
+        </div>
+
+        <!-- View Previous Requests Section -->
+        <div id="previous-requests-section" class="requests-container" style="display: none;">
+            <h3>Previous Leave Requests</h3>
+            <div id="previousRequestsList"></div>
+        </div>
+
+        <div class="button-group">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="employeeDatabase.js"></script>
+    <script src="leaveOfAbsence.js"></script>
+</body>
+</html>

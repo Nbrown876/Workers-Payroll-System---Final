@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="login-container">
+            <div class="icon-container">
+                <div class="money-icon">
+                    <i class="dollar-symbol">$</i>
+                    <div class="curved-text">Workers' Payroll System</div>
+                </div>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="USERNAME" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="PASSWORD" required>
+                </div>
+                
+                <div class="input-group">
+                    <select id="role" required>
+                        <option value="">Select Role</option>
+                        <option value="employee">Employee</option>
+                        <option value="manager">Manager</option>
+                        <option value="accountant">Accountant</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="login-button">LOGIN</button>
+                
+                <div class="form-footer">
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                    <a href="#" class="toggle-form" onclick="toggleForm()">Register New Account</a>
+                </div>
+
+                <button type="button" onclick="clearStoredCredentials()" style="margin-top: 10px;">Reset All Credentials</button>
+            </form>
+            <script src="LoginValidation.js" defer></script>
+        </div>
+    </body>
+</html>
